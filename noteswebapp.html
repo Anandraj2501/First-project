@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="noteswebapp.css">
+    
     <title>NotesApp</title>
 </head>
+
 <body>
-    hello
+    <div class="pop_bg" id="pop_bgg">
+        <div class="main_pop shadow-lg shadow-current">
+            
+            <div class="heading font-medium text-lg flex justify-between">
+                <div id="pop_title">Add Your Notes...</div>
+                <p class="cross text-lg" onclick="close_popup()">&times;</p>
+            </div>
+            <hr class="border-solid border-2">
+            <div class="midd_pop">
+                <p class="title font-normal text-lg">Title</p>
+                <textarea name="title" id="text_area" cols="40" rows="5" placeholder="enter your title..."
+                    class="textarea"></textarea>
+                <p class="desc font-normal text-lg">Description</p>
+                <textarea name="desc" id="desc_area" cols="40" rows="5" placeholder="enter your description..."
+                    class="descarea"></textarea>
+            </div>
+            <div class="btn" onclick="hide_popup()">
+                <button class="font-normal text-lg" id="add_btn">ADD</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-row gap-x-20 flex-wrap gap-y-10">
+        <div
+            class="rounded-md border border-white w-44 h-44 relative left-10 top-10 flex flex-col justify-center items-center bg-white " id="add_box">
+            <div class="border-dashed border-2 border-purple-400 rounded-full flex justify-center items-center w-16 h-16 hover:bg-purple-400 addbtn"
+                onclick="popup_box()">
+                <div>+</div>
+            </div>
+            
+            <p class="relative top-7">Add Notes</p>
+            
+        </div>
+    </div>
+    
+    <script src="noteswebapp.js"></script>
 </body>
+
 </html>
